@@ -118,7 +118,11 @@ const getUserPosts = async (req, res, next) => {
       return res.status(404).json({ message: "User not found" });
     }
 
-    if (user.private && !user.followers.includes(req.user.id)) {
+    if (
+      user.private &&
+      !user.followings.includes(req.user.id) &&
+      user._id.toString() !== req.user.id.toString()
+    ) {
       return res.json({
         success: true,
         data: {
