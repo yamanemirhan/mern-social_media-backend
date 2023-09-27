@@ -145,7 +145,7 @@ const getUserPosts = async (req, res, next) => {
         path: "comments",
         populate: {
           path: "author",
-          select: "_id name stories private",
+          select: "_id name stories private profilePicture",
           populate: {
             path: "stories",
             select: "image createdAt viewers",
@@ -155,7 +155,7 @@ const getUserPosts = async (req, res, next) => {
       })
       .populate({
         path: "author",
-        select: "_id name stories private",
+        select: "_id name stories private profilePicture",
         populate: {
           path: "stories",
           select: "image createdAt viewers",
