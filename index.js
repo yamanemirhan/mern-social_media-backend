@@ -14,7 +14,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: "https://mern-socialmedia-app.netlify.app",
+    origin: "http://localhost:3000,
     methods: ["GET", "PUT", "POST", "DELETE", "OPTIONS"],
     allowedHeaders: [
       "Origin",
